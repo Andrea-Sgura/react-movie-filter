@@ -17,6 +17,13 @@ function App() {
         <div className="row gy-4">
           <div className="col-12">Movies</div>
           <div className="col-12">
+            <select className="form-control">
+              <option value="">Tutti i generi</option>
+              <option value="Fantascienza">Fantascienza</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Romantico">Romantico</option>
+              <option value="Azione">Azione</option>
+            </select>
             <ul className="list-group">
               {listMovies.map((movie, index) => {
                 return (
