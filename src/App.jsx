@@ -10,6 +10,7 @@ const listMovies = [
 ]
 
 function App() {
+  const [genre, setGenre] = useState("");
 
   return (
     <>
@@ -17,7 +18,7 @@ function App() {
         <div className="row gy-4">
           <div className="col-12">Movies</div>
           <div className="col-12">
-            <select className="form-control">
+            <select className="form-select" value={genre} onChange={(e) => setGenre(e.target.value)}>
               <option value="">Tutti i generi</option>
               <option value="Fantascienza">Fantascienza</option>
               <option value="Thriller">Thriller</option>
