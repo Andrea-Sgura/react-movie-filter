@@ -10,6 +10,7 @@ const listMovies = [
 ]
 
 function App() {
+  const [filteredMovies, setFilteredMovies] = useState(listMovies);
   const [genre, setGenre] = useState("");
 
   return (
@@ -26,7 +27,7 @@ function App() {
               <option value="Azione">Azione</option>
             </select>
             <ul className="list-group">
-              {listMovies.map((movie, index) => {
+              {filteredMovies.map((movie, index) => {
                 return (
                   <li key={index} className="list-group-item">
                     {movie.title} - <em>{movie.genre}</em>
