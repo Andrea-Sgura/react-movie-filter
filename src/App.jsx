@@ -16,6 +16,7 @@ function App() {
   useEffect(() => {
     if (genre !== ``) {
       const selectedMovies = listMovies.filter(movie => movie.genre === genre);
+      setFilteredMovies(selectedMovies);
     }
     else {
       setFilteredMovies(listMovies);
