@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const listMovies = [
   { title: 'Inception', genre: 'Fantascienza' },
@@ -12,6 +12,15 @@ const listMovies = [
 function App() {
   const [filteredMovies, setFilteredMovies] = useState(listMovies);
   const [genre, setGenre] = useState("");
+
+  useEffect(() => {
+    if (genre !== ``) {
+      const selectedMovies = listMovies.filter(movie => movie.genre === genre);
+    }
+    else {
+      setFilteredMovies(listMovies);
+    }
+  }, [genre]);
 
   return (
     <>
